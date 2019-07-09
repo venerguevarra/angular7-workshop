@@ -1,0 +1,5 @@
+<div class="parent-container">
+  <h1>Parent component</h1>
+  <p>Random number from child component: {{ randomNumber || 'Not yet generated' }}</p>
+  <app-child (numberGenerated)="onNumberGenerated($event)"></app-child>
+</div>

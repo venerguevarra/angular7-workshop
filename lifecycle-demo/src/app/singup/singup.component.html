@@ -1,0 +1,7 @@
+<div>
+  <h2>Name : </h2>
+  <input type='text' [(ngModel)]='name' />
+  <input type='text' [(ngModel)]='prefix' />
+  <app-random [salt]='prefix' (generatePassword)='onGeneratePassword($event)'></app-random>
+  <h3>Password : {{password}}</h3>
+</div>

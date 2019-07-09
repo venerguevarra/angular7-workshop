@@ -1,0 +1,58 @@
+<table>
+  <thead>
+    <th># Policy ID</th>
+    <th>Policy name</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let policy of policies">
+      <td>{{policy.id}}</td>
+      <td>{{policy.name}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<app-fordemodetail *ngFor="let policy of policies" [policy]="policy"></app-fordemodetail>
+<div *ngFor="let policy of policies; let i=index">{{i + 1}} - {{policy.name}}</div>
+
+<p>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Branch</th>
+        <th>DOB</th>
+        <th>Gender</th>
+        <th>Mobile</th>
+        <th>Index</th>
+        <th>IsFirst</th>
+        <th>IsLast</th>
+        <th>IsEven</th>
+        <th>IsOdd</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let student of students; trackBy:trackByStudentID; let i=index; let isFirst = first; let isLast = last, let isEven = even; let isOdd = odd'>
+        <td>{{student.ID}}</td>
+        <td>{{student.FirstName}}</td>
+        <td>{{student.LastName}}</td>
+        <td>{{student.Branch}}</td>
+        <td>{{student.DOB}}</td>
+        <td>{{student.Gender}}</td>
+        <td>{{student.Mobile}}</td>
+        <td>{{i}}</td>
+        <td>{{isFirst}}</td>
+        <td>{{isLast}}</td>
+        <td>{{isEven}}</td>
+        <td>{{isOdd}}</td>
+      </tr>
+      <tr *ngIf="!students || students.length==0">
+        <td colspan="7">
+          No Students to display
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <button (click)='getStudents()'>Refresh Students</button>

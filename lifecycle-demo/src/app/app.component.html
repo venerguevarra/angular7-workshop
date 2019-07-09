@@ -1,0 +1,7 @@
+<h2>Open console to see the lifecycle events</h2>
+<div>
+  <input type='button' (click)='toggleSignup()' value='{{btnText}} Signup'>
+</div>
+<div *ngIf='showSignup'>
+  <app-singup></app-singup>
+</div>

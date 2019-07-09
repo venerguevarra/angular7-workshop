@@ -1,0 +1,19 @@
+.child-container {
+    background: #FC5130;
+    color: #FFFAFF;
+    padding: 15px;
+  }
+
+  .btn {
+    border: 1px solid #303036;
+    background: none;
+    color: #303036;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .btn:hover {
+    background: #303036;
+    color: #FFFAFF;;
+    cursor: pointer;
+  }

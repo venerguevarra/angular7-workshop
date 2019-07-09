@@ -1,0 +1,26 @@
+<div class="container">
+  <h4>NgClass</h4>
+  <div *ngFor="let p of people">
+    <p [ngClass]="{
+      'text-success':p.country === 'USA',
+      'text-secondary':p.country === 'Canada',
+      'text-danger':p.country === 'Puerto Rico',
+      'text-info':p.country === 'India'
+    }">
+      {{ p.name }} ({{ p.country }})
+    </p>
+  </div>
+  <hr/>
+  <h4>NgStyle</h4>
+  <div *ngFor="let p of people">
+    <p [ngStyle]="{'background-color':p.status === 'Dead' ? 'red' : 'green' }">
+      {{ p.name }} ({{ p.country }}) is {{p.status}}
+    </p>
+  </div>
+  <hr/>
+  <h4>NgModel</h4>
+  <div>
+    <input type="text" class="form-control" id="name" required [(ngModel)]="data.name" />
+    <p>Hello {{ data.name }}!</p>
+  </div>
+</div>
