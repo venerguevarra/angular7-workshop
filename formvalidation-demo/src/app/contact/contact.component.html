@@ -1,3 +1,6 @@
+<!--The checks for dirty and touched prevent errors from showing until the user does one of two things: changes the value,
+    turning the control dirty; or blurs the form control element, setting the control to touched.-->
+
 <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
   Email: <input formControlName="email" />
   <span *ngIf="(email.dirty || email.touched) && email.invalid && email.errors.required">
